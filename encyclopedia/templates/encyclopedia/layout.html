@@ -1,38 +1,40 @@
 {% load static %}
 
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
-    </head>
-    <body>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
         <div class="row">
-            <div class="sidebar col-lg-2 col-md-3">
+            <div class="sidebar col-lg-3 col-md-4"> <!-- Adjusted width of the sidebar -->
                 <h2>Wiki</h2>
-                <form action="{% url 'encyclopedia:search' %}" method="GET">
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia" required>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                <form action="{% url 'encyclopedia:search' %}" method="GET" class="search input-group mb-3">
+                    <input class="form-control" type="text" name="q" placeholder="Search Entry" required>
+                    <div class="input-group-append">
+                        <button type="submit" class="btn-primary">Search</button>
+                    </div>
                 </form>
                 <div>
-                    <a href="{% url 'encyclopedia:index' %}">Home</a>
+                    <a href="{% url 'encyclopedia:index' %}" class="btn btn-link">Home</a>
                 </div>
                 <div>
-                    <a href="{% url 'encyclopedia:create' %}">Create New Page</a>  <!-- Link to create page; change to your URL name -->
+                    <a href="{% url 'encyclopedia:create' %}" class="btn btn-link">Create New Page</a>
                 </div>
                 <div>
-                    <a href="{% url 'encyclopedia:random' %}">Random Page</a>
+                    <a href="{% url 'encyclopedia:random' %}" class="btn btn-link">Random Page</a>
                 </div>
                 {% block nav %}
                 {% endblock %}
             </div>
-            <div class="main col-lg-10 col-md-9">
+            <div class="main col-lg-9 col-md-8"> <!-- Adjusted width of main content area -->
                 {% block body %}
                 {% endblock %}
             </div>
         </div>
-
-    </body>
+    </div>
+</body>
 </html>

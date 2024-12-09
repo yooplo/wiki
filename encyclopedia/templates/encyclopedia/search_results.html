@@ -16,6 +16,8 @@
             {% endfor %}
         </ul>
     {% else %}
-        <p>No entries found matching "{{ query }}".</p>
+        <div class="alert alert-warning" role="alert">
+            No entries found matching "{{ query }}".
+        </div>
     {% endif %}
 {% endblock %}

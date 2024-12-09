@@ -1,38 +1,110 @@
 body {
     margin: 0;
-    background-color: white;
+    background-color: #f4f4f9; /* Light grey background for contrast */
+    font-family: 'Arial', sans-serif; /* Consistent font style */
+    color: #333; /* Default text color */
 }
 
-code {
-    white-space: pre;
+h1, h2, h3 {
+    color: #4a4e69; /* Consistent heading color */
 }
 
-h1 {
-    margin-top: 0px;
-    padding-top: 20px;
+.sidebar {
+    background-color: #f0f0f0; /* Light grey for contrast */
+    height: 100vh; /* Full height to fill the screen */
+    padding: 20px; /* Spacious around elements */
+    border-right: 2px solid #ccc; /* Subtle border for separation */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect gives depth */
 }
 
-textarea {
-    height: 90vh;
-    width: 80%;
-}
-
-.main {
-    padding: 10px;
+.sidebar .btn {
+    width: 100%;
 }
 
 .search {
     width: 100%;
-    font-size: 15px;
-    line-height: 15px;
-}
-
-.sidebar {
-    background-color: #f0f0f0;
-    height: 100vh;
-    padding: 20px;
+    flex: 1;
+    padding: 0px; 
+    border-radius: 5px 0 0 5px;
 }
 
 .sidebar h2 {
-    margin-top: 5px;
+    color: #333; /* Dark color for headings */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.sidebar a {
+    color: #a1aae1; /* Set link color */
+    margin-bottom: 10px; /* Space between links */
+    display: block; /* Make links fill the container */
+    padding: 10px; /* Inner padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.sidebar a:hover {
+    background-color: #e0e0e0; /* Light hover effect */
+}
+
+/* Main Content Area */
+.main {
+    padding: 20px; /* Consistent padding */
+    background-color: white; /* White background for main area */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Forms and Inputs */
+input[type="text"], textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding for inputs */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Subtle border */
+}
+
+textarea {
+    height: auto; /* Auto height */
+    min-height: 90vh; /* Minimum height */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Button Styles */
+.btn {
+    background-color: #9a6fbb; 
+    color: white; 
+    width: 100%; /* Full width for buttons */
+    margin-bottom: 10px; /* Spacing between buttons */
+}
+
+.btn:hover {
+    background-color: #7c5d9b; /* Darker button color on hover */
+}
+
+/* Alert Styles */
+.alert {
+    padding: 15px; /* Padding for alerts */
+    margin-bottom: 20px; /* Margin below alerts */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.alert-danger {
+    color: #721c24; /* Error text color */
+    background-color: #f8d7da; /* Background color for error */
+    border: 1px solid #f5c6cb; /* Border for error alerts */
+}
+
+.input-group-append .btn {
+    padding: 9px 15px;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto; 
+        margin-bottom: 20px; 
+    }
+
+    .main {
+        margin: 0; /* Remove margins on small screens */
+    }
 }
