@@ -17,8 +17,6 @@ This project is a simple encyclopedia web application built with Django. Users c
 - Markdown2 for Markdown to HTML conversion
 - Bootstrap 4 for responsive design and styling
 
-## Getting Started
-
 ### Prerequisites
 - Python 3.12 or higher
 - pip (Python package installer)
@@ -26,3 +24,9 @@ This project is a simple encyclopedia web application built with Django. Users c
 ### Clone the Repository
 ```bash
 git clone https://github.com/yooplo/wiki.git
+```
+
+### To run it
+```bash
+python manage.py runserver
+```
