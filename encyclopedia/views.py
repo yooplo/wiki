@@ -66,3 +66,22 @@ def create(request):
         return redirect('encyclopedia:entry', title=title)
 
     return render(request, "encyclopedia/create.html")
+
+def edit(request, title):
+    # Get the current content of the entry
+    entry_content = util.get_entry(title)
+    
+    if request.method == "POST":
+        content = request.POST.get("content")
+
+        # Save the edited entry
+        util.save_entry(title, content)
+        
+        # Redirect to the entry page after saving
+        return redirect("encyclopedia:entry", title=title)
+
+    # Render the edit page with pre-populated content
+    return render(request, "encyclopedia/edit.html", {
+        "title": title,
+        "content": entry_content
+    })
