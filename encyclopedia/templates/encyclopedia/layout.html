@@ -10,10 +10,10 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="sidebar col-lg-3 col-md-4"> <!-- Adjusted width of the sidebar -->
+            <div class="sidebar col-lg-3 col-md-4"> <!-- Adjust width as needed -->
                 <h2>Wiki</h2>
-                <form action="{% url 'encyclopedia:search' %}" method="GET" class="search input-group mb-3">
-                    <input class="form-control" type="text" name="q" placeholder="Search Entry" required>
+                <form action="{% url 'encyclopedia:search' %}" method="GET" class="input-group mb-3">
+                    <input class="search form-control" type="text" name="q" placeholder="Search Encyclopedia" required>
                     <div class="input-group-append">
                         <button type="submit" class="btn-primary">Search</button>
                     </div>
@@ -30,7 +30,7 @@
                 {% block nav %}
                 {% endblock %}
             </div>
-            <div class="main col-lg-9 col-md-8"> <!-- Adjusted width of main content area -->
+            <div class="main col-lg-9 col-md-8"> <!-- Main content area -->
                 {% block body %}
                 {% endblock %}
             </div>

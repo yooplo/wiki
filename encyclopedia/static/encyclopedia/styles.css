@@ -1,44 +1,54 @@
 body {
     margin: 0;
-    background-color: #f4f4f9; /* Light grey background for contrast */
-    font-family: 'Arial', sans-serif; /* Consistent font style */
-    color: #333; /* Default text color */
+    font-family: 'Arial', sans-serif;
+    color: #333;
 }
 
 h1, h2, h3 {
     color: #4a4e69; /* Consistent heading color */
 }
 
+/* Sidebar Styles */
 .sidebar {
-    background-color: #f0f0f0; /* Light grey for contrast */
-    height: 100vh; /* Full height to fill the screen */
-    padding: 20px; /* Spacious around elements */
-    border-right: 2px solid #ccc; /* Subtle border for separation */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect gives depth */
+    background-color: #aeaeae;
+    height: 100vh;
+    padding: 20px;
+    border-right: 2px solid #ccc; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: stretch;
 }
 
-.sidebar .btn {
+/* Search Bar Styles */
+.input-group {
     width: 100%;
 }
 
 .search {
-    width: 100%;
-    flex: 1;
-    padding: 0px; 
-    border-radius: 5px 0 0 5px;
+    padding: 10px; 
+    border-radius: 5px 0 0 5px; 
+    border: 1px solid #ccc;
 }
 
+.input-group-append .btn {
+    padding: 10px 15px; /* Adjust padding for button */
+    border-radius: 0 5px 5px 0; /* Rounded right corners */
+}
+
+/* Sidebar Headings */
 .sidebar h2 {
     color: #333; /* Dark color for headings */
     margin-bottom: 20px; /* Space below heading */
 }
 
+/* Sidebar Links */
 .sidebar a {
     color: #a1aae1; /* Set link color */
     margin-bottom: 10px; /* Space between links */
     display: block; /* Make links fill the container */
     padding: 10px; /* Inner padding for clickable area */
     border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .sidebar a:hover {
@@ -63,14 +73,14 @@ input[type="text"], textarea {
 
 textarea {
     height: auto; /* Auto height */
-    min-height: 90vh; /* Minimum height */
+    min-height: 100%; /* Minimum height */
     resize: vertical; /* Allow vertical resizing */
 }
 
 /* Button Styles */
 .btn {
-    background-color: #9a6fbb; 
-    color: white; 
+    background-color: #9a6fbb; /* Purple button */
+    color: white; /* Button text color */
     width: 100%; /* Full width for buttons */
     margin-bottom: 10px; /* Spacing between buttons */
 }
@@ -92,16 +102,11 @@ textarea {
     border: 1px solid #f5c6cb; /* Border for error alerts */
 }
 
-.input-group-append .btn {
-    padding: 9px 15px;
-    border-radius: 0 5px 5px 0;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .sidebar {
-        height: auto; 
-        margin-bottom: 20px; 
+        height: auto; /* Auto height for small screens */
+        margin-bottom: 20px; /* Margin below sidebar */
     }
 
     .main {
