@@ -1,3 +1,4 @@
+import random
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import markdown2
@@ -85,3 +86,10 @@ def edit(request, title):
         "title": title,
         "content": entry_content
     })
+
+def random_page(request):
+    entries = util.list_entries()
+    if entries:
+        random_title = random.choice(entries)  # Choose a random entry
+        return redirect('encyclopedia:entry', title=random_title)
+    return redirect('encyclopedia:index')
